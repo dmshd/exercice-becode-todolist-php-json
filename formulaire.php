@@ -1,10 +1,15 @@
 <?php
 
+//code de david
+// $js = file_get_contents('todo.json') ;
+// $js = json_decode ($js, true) ;
+// $js[] = $tache ;
+// $js = json_encode($js);
+// file_put_contents('todo.json', $js) ;
+
 //déclaration des variables
 $taskError = "";
 $addTask = $_POST["addTask"];
-$todoJsonFile = 'todo.json';
-
 
 //Fonction GoldenP - Sanitization
 function GoldenP($a) {
@@ -18,12 +23,18 @@ function GoldenP($a) {
 };
 
 //Condition Si vide -> erreur sinon -> résultat sanitizé dans $result et ajouter au JSON
-if (empty($_POST["addTask"])) {
-  $taskError = "<span class=\"error\">Veuillez entrer une tâche.</span>";
-}else {
-  $result = GoldenP($addTask);
-  file_put_contents($todoJsonFile, $result);
-  echo $result;
+
+if ( $_SERVER["REQUEST_METHOD"] == "POST" ) {
+  if (empty($_POST["addTask"])) {
+    $taskError = "<span class=\"error\">Veuillez entrer une tâche.</span>";
+  }else {
+    $result = GoldenP($addTask);
+    $taches = file_get_contents('todo.json');
+    $taches = json_decode($taches, true);
+    $taches .= $result;
+    $taches = json_encode($taches);
+    file_put_contents('todo.json', $taches);
+  }
 }
 
  ?>

@@ -1,5 +1,15 @@
 <?php
 
+//déclaration des variables
+$taskError = "";
+$addTask = $_POST["addTask"];
+
+// $todo_array[] = $todo;
+
+$file = 'todo.json';
+file_put_contents($file, $addTask);
+
+//Fonction GoldenP - Sanitization
 function GoldenP($a) {
   if (isset($a)) {
   $a = filter_var($a, FILTER_SANITIZE_STRING);
@@ -10,20 +20,18 @@ function GoldenP($a) {
   }
 };
 
-$addTask = $_POST["addTask"];
-
-$result = GoldenP($addTask);
-
-
-echo $result;
-
-
-
-
-
-
+//Condition Si vide -> erreur sinon -> résultat sanitizé dans $result
+if (empty($_POST["addTask"])) {
+  $taskError = "<span class=\"error\">Veuillez entrer une tâche.</span>";
+}else {
+  $result = GoldenP($addTask);
+  echo $result;
+}
+//fonction pour ajouter du contenu
+// file_put_contents($file, $current);
 
  ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -45,7 +53,10 @@ echo $result;
       <h2>Ajouter une tâche</h2>
       <label for="addTaskInput">La tâche à effectuer</label><br>
       <input type="text" name="addTask" id="addTaskInput">
-      <input type="submit" value="Ajouter">
+      <input type="submit" value="Ajouter"><br>
+      <?php
+        echo $taskError;
+       ?>
     </fieldset>
   </form>
 </body>

@@ -1,3 +1,29 @@
+<?php
+
+function GoldenP($a) {
+  if (isset($a)) {
+  $a = filter_var($a, FILTER_SANITIZE_STRING);
+  $a = trim($a);
+  $a = stripslashes($a);
+  $a = htmlspecialchars($a);
+  return $a;
+  }
+};
+
+$addTask = $_POST["addTask"];
+
+$result = GoldenP($addTask);
+
+
+echo $result;
+
+
+
+
+
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

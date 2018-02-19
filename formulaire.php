@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,20 @@
     <title>Todolist</title>
 </head>
 <body>
-    <label>A FAIRE</label>
-    <form>
+    <h2>A FAIRE</h2>
+    <form class="formulaire" action="formulaire.php" method="post">
+    <fieldset>
     <input type="checkbox" name="choix1" value="choix1"> Choix 1<br>
     <input type="checkbox" name="choix2" value="choix2"> Choix 2<br>
     <input type="checkbox" name="choix3" value="choix3"> Choix 3<br>
     <input type="submit" name="submit" value="Enregistrer">
-
+    </fieldset>
+    <fieldset>
+      <h2>Ajouter une tâche</h2>
+      <label for="addTaskInput">La tâche à effectuer</label><br>
+      <input type="text" name="addTask" id="addTaskInput">
+      <input type="submit" value="Ajouter">
+    </fieldset>
+  </form>
 </body>
 </html>

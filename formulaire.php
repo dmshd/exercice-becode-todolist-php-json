@@ -1,5 +1,11 @@
 <?php
 
+
+function isExist($var){
+    if (isset($var)){
+    }
+  };
+
 function GoldenP($a) {
   if (isset($a)) {
   $a = filter_var($a, FILTER_SANITIZE_STRING);
@@ -17,12 +23,6 @@ $result = GoldenP($addTask);
 
 echo $result;
 
-
-
-
-
-
-
  ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,7 +34,7 @@ echo $result;
 </head>
 <body>
     <h2>A FAIRE</h2>
-    <form class="formulaire" action="formulaire.php" method="post">
+    <form class="formulaire" action="todo.json" method="post">
     <fieldset>
     <input type="checkbox" name="choix1" value="choix1"> Choix 1<br>
     <input type="checkbox" name="choix2" value="choix2"> Choix 2<br>
@@ -45,8 +45,19 @@ echo $result;
       <h2>Ajouter une tâche</h2>
       <label for="addTaskInput">La tâche à effectuer</label><br>
       <input type="text" name="addTask" id="addTaskInput">
+      <?php if (empty($addTask)) {
+          echo "erreur";
+      }
+      ?>
       <input type="submit" value="Ajouter">
     </fieldset>
   </form>
+
+<?php
+$todo = array();
+
+echo json_encode($arr);
+?>
+
 </body>
 </html>

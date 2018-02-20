@@ -1,70 +1,34 @@
 <?php
-
-//code de david
-// $js = file_get_contents('todo.json') ;
-// $js = json_decode ($js, true) ;
-// $js[] = $tache ;
-// $js = json_encode($js);
-// file_put_contents('todo.json', $js) ;
+ini_set('display_errors', 1);
 
 //déclaration des variables
-$taskError = "";
-$addTask = $_POST["addTask"];
+$taskError = ""; //initialisation de la variable erreur en lui assignant une chaine de caractère vide (optionnel ?)
 
 //Fonction GoldenP - Sanitization
-function GoldenP($a) {
-  if (isset($a)) {
-  $a = filter_var($a, FILTER_SANITIZE_STRING);
-  $a = trim($a);
-  $a = stripslashes($a);
-  $a = htmlspecialchars($a);
+function sanitize($a) {
+  $a = filter_var($a, FILTER_SANITIZE_STRING); // filter_var — Filtre une variable avec un filtre spécifique -- FILTER_SANITIZE_STRING Supprime tous les tags HTML
+  $a = trim($a); // trim — Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
+  $a = stripslashes($a); // stripslashes — Supprime les antislashs d'une chaîne
+  $a = htmlspecialchars($a); //htmlspecialchars — Convertit les caractères spéciaux en entités HTML
   return $a;
-  }
-};
+}
 
-//Condition Si vide -> erreur sinon -> résultat sanitizé dans $result et ajouter au JSON
-
-if ( $_SERVER["REQUEST_METHOD"] == "POST" ) {
+if ( $_SERVER["REQUEST_METHOD"] == "POST" ) { // $_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script -- REQUEST_METHOD Méthode de requête utilisée pour accéder à la page;
   if (empty($_POST["addTask"])) {
-    $taskError = "<span class=\"error\">Veuillez entrer une tâche.</span>";
+  $taskError = "Veuillez entrer une tâche.";
   }else {
-    $result = GoldenP($addTask);
-    $taches = file_get_contents('todo.json');
-    $taches = json_decode($taches, true);
-    $taches .= $result;
-    $taches = json_encode($taches);
-    file_put_contents('todo.json', $taches);
+  $addTask = $_POST["addTask"]; // Récupération du message envoyé par le formulaire et placement dans la variable $addTask
+  $todo = array(); // initialisation d'un tableau php
+  $todo["tache"] = $addTask; // ajout de la clé tache dont la valeur est la tâche récupérée plus haut
+  $todo["fait"] = false; // ajout de la clé "fait" dont la valeur est faux par défaut
+  $json = file_get_contents('todo.json'); // récupération du contenu brut du json et placement dans une variable
+  $json = json_decode($json, true); // décodage du contenu de la variable
+  $json[] = $todo; // Ajout du tableau temporaire $todo contenant la "tache" et le "fait => false par defaut" à la suite des précédents tableaux contenant chacun les taches précédement encodées dans le JSON
+  $json = json_encode($json); //réencodage au format JSON
+  file_put_contents('todo.json', $json); // Tout fourrer dans le fichier todo.json
   }
 }
 
- ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todolist</title>
-</head>
-<body>
-    <h2>A FAIRE</h2>
-    <form class="formulaire" action="formulaire.php" method="post">
-    <fieldset>
-    <input type="checkbox" name="choix1" value="choix1"> Choix 1<br>
-    <input type="checkbox" name="choix2" value="choix2"> Choix 2<br>
-    <input type="checkbox" name="choix3" value="choix3"> Choix 3<br>
-    <input type="submit" name="submit" value="Enregistrer">
-    </fieldset>
-    <fieldset>
-      <h2>Ajouter une tâche</h2>
-      <label for="addTaskInput">La tâche à effectuer</label><br>
-      <input type="text" name="addTask" id="addTaskInput">
-      <input type="submit" value="Ajouter"><br>
-      <?php
-        echo $taskError;
-       ?>
-    </fieldset>
-  </form>
-</body>
-</html>
+
+ ?>

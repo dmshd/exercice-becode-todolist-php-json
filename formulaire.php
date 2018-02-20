@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 1);
+ini_set('display_errors', 1); // afficher les erreurs php dans le navigateur
 
 //déclaration des variables
 $taskError = ""; //initialisation de la variable erreur en lui assignant une chaine de caractère vide (optionnel ?)
@@ -14,8 +14,8 @@ function sanitize($a) {
 }
 
 if ( $_SERVER["REQUEST_METHOD"] == "POST" ) { // $_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script -- REQUEST_METHOD Méthode de requête utilisée pour accéder à la page;
-  if (empty($_POST["addTask"])) {
-  $taskError = "Veuillez entrer une tâche.";
+  if (empty($_POST["addTask"])) { // si le champs input ayant pour valeur addTask, est vide alors ...
+  $taskError = "Veuillez entrer une tâche."; // Assignation du message d'erreur à la varialbe $teskError
   }else {
   $addTask = $_POST["addTask"]; // Récupération du message envoyé par le formulaire et placement dans la variable $addTask
   $todo = array(); // initialisation d'un tableau php

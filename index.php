@@ -16,11 +16,7 @@
    <form class="formulaire" action="index.php" method="post">
    <fieldset>
    <h2>ToDo</h2>
-   <input type="checkbox" name="choix1" value="choix1"> Choix 1<br>
-   <input type="checkbox" name="choix2" value="choix2"> Choix 2<br>
-   <input type="checkbox" name="choix3" value="choix3"> Choix 3<br>
-   <br>
-   <input type="submit" name="submit" value="Enregistrer">
+   <?php display_list(); ?>
    </fieldset>
 
 

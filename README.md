@@ -1,7 +1,7 @@
 <!-- # un readme de qualité où tu indiques avec qui tu as travaillé, qui a fait quoi, et d'autres informations que tu juges importantes de communiquer. -->
 
 # Réaliser une To do list avec PHP et JSON
-## développé par (https://github.com/geocani)[Geoffrey Canivet] et (https://github.com/dmshd)[Daniel Muyshond]
+## développé par ![Geoffrey Canivet](https://github.com/geocani) et ![Daniel Muyshond](https://github.com/dmshd)
 
 ## notes php  
 Nous avons constaté qu'il devenait compliqué de manipuler les données quand on commençait à avoir un array dans un array.  

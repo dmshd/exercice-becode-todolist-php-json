@@ -25,7 +25,7 @@ function display_todo() {
   $json = json_decode($json, true);
   foreach ($json as $key => $value) {
     if ($json[$key]["fait"] == false) {
-    echo "<input type=\"checkbox\" name=\"todo\" value=\"false\">" . $value["tache"] . "</input><br>";
+    echo '<label for="' . $value['tache'] . '"><input type="checkbox" name="todo[]" value="' . $value['tache'] . '" id="' . $value['tache'] . '">' . $value['tache'] . '</label><br>';
     }
   }
 }
@@ -35,7 +35,7 @@ function display_done() {
   $json = json_decode($json, true);
   foreach ($json as $key => $value) {
     if ($json[$key]["fait"] == true) {
-    echo "<input type=\"checkbox\" name=\"todo\" value=\"true\"><strike>" . $value["tache"] . "</strike></input><br>";
+    echo '<strike>' . $value['tache'] . '</strike><br>';
     }
   }
 }
@@ -52,9 +52,9 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" ) { // $_SERVER est un tableau contena
   $todo["tache"] = $addTask; // ajout de la clé tache dont la valeur est la tâche récupérée plus haut.
   $todo["fait"] = false; // ajout de la clé "fait" dont la valeur est faux par défaut.
   $json = file_get_contents('todo.json'); // récupération du contenu brut du json et placement dans une variable.
-  $json = json_decode($json, true); // décodage du contenu de la variable.
+  $json = json_decode($json, true); // décodage du contenu de la variable. Le paramètre true transforme les données en tableau php
   $json[] = $todo; // Ajout du tableau temporaire $todo contenant la "tache" et le "fait => false par defaut" à la suite des précédents tableaux contenant chacun les taches précédement encodées dans le JSON.
-  $json = json_encode($json); //réencodage au format JSON.
+  $json = json_encode($json, JSON_PRETTY_PRINT); //réencodage au format JSON.
   file_put_contents('todo.json', $json); // Tout fourrer dans le fichier todo.json.
   }
 }

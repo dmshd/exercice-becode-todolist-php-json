@@ -10,7 +10,6 @@
 <body>
   <?php
   include("formulaire.php");
-  include("contenu.php");
 
    ?>
 <section class="page">
@@ -18,11 +17,13 @@
   <fieldset>
    <h2>ToDo</h2>
     <?php display_todo(); ?>
+    <?php include("contenu.php"); ?>
     <input type="submit" name="Enregistrer" value="Enregistrer">
   </fieldset>
   <fieldset>
   <h2>ARCHIVE</h2>
     <?php display_done(); ?>
+
   </fieldset>
 </form>
 <form class="formulaire" action="index.php" method="post">

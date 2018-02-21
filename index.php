@@ -11,32 +11,26 @@
   <?php
   include("formulaire.php");
   include("contenu.php");
+
    ?>
 <section class="page">
-   <form class="formulaire" action="index.php" method="post">
-   <fieldset>
+<form action="index.php" method="post">
+  <fieldset>
    <h2>ToDo</h2>
-   <?php display_list(); ?>
-   </fieldset>
-
-
+    <?php display_todo(); ?>
+    <input type="submit" name="Enregistrer" value="Enregistrer">
+  </fieldset>
+  <fieldset>
+  <h2>ARCHIVE</h2>
+    <?php display_done(); ?>
+  </fieldset>
+</form>
+<form class="formulaire" action="index.php" method="post">
 <fieldset>
-<h2>ARCHIVE</h2>
-   <input type="checkbox" name="choix4" value="choix4"> Choix 4 <br>
-   <input type="checkbox" name="choix5" value="choix5"> Choix 5<br>
-   <input type="checkbox" name="choix6" value="choix6"> Choix 6<br>
-   <input type="checkbox" name="choix7" value="choix7"> Choix 7<br>
-</fieldset>
-
-
-
-
-
-   <fieldset>
      <h2>Ajouter une tâche</h2>
      <input type="text" name="addTask">
      <br><br>
-     <input type="submit" value="Ajouter"><br>
+     <input type="submit" name="Ajouter" value="Ajouter"><br>
      <span class="error"><?php
        echo $taskError;
       ?></span>

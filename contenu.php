@@ -1,6 +1,9 @@
 <?php
-if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["enregistrer"]) AND !empty($_POST['todo']) ) {
+
 // ini_set('display_errors', 1);
+
+// Le fichier "contenu.php" modifie le status des tâches lorsqu'on le soumet.
+if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["enregistrer"]) AND !empty($_POST['todo']) ) {
 $json = file_get_contents('todo.json');
 $json = json_decode($json, true);
 $checked = $_POST["todo"];

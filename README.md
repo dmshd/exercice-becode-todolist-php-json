@@ -3,6 +3,12 @@
 # Réaliser une To do list avec PHP et JSON
 ## développé par [Geoffrey Canivet](https://github.com/geocani) et [Daniel Muyshond](https://github.com/dmshd)
 
+## Idées d'améliorations à réaliser  
+
+* ajouter un bouton reset  
+* Si la première lettre de la chaine de caractère inputée n'est pas en majuscule la mettre en majuscule  
+
+
 ## notes php  
 
 `JSON_PRETTY_PRINT` Paramètre de la fonction `json_encode()` permettant d'écrire un JSON avec une indentation automatique le rendant beaucoup plus lisible.  
@@ -31,7 +37,7 @@ function GoldenVarD($key) {
 }
 ```
 
-## Merci 
+## Merci
 
 Dans notre `contenu.php` vous trouverez cette boucle :
 

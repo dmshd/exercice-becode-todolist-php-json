@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "tache": "Sortir les poubelles",
+        "fait": false
+    },
+    {
+        "tache": "Aller chercher m\u00e9m\u00e9",
+        "fait": true
+    },
+    {
+        "tache": "Pommes de terre",
+        "fait": false
+    },
+    {
+        "tache": "Rdv SMARTbe Charleroi",
+        "fait": false
+    },
+    {
+        "tache": "Terminer la To do list avant jeudi",
+        "fait": true
+    }
+]

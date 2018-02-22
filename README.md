@@ -3,13 +3,13 @@
 # Réaliser une To do list avec PHP et JSON
 ## développé par [Geoffrey Canivet](https://github.com/geocani) et [Daniel Muyshond](https://github.com/dmshd)
 
-## Idées d'améliorations à réaliser  
+### Idées d'améliorations à réaliser  
 
 * ~~Ajouter un bouton reset~~  - **fait**
 * Si la première lettre de la chaine de caractère inputée n'est pas en majuscule la mettre en majuscule  
 
 
-## notes php  
+### notes php  
 
 `JSON_PRETTY_PRINT` Paramètre de la fonction `json_encode()` permettant d'écrire un JSON avec une indentation automatique le rendant beaucoup plus lisible.  
 
@@ -19,6 +19,7 @@
 
 Nous avons constaté qu'il devenait compliqué de manipuler les données quand on commençait à avoir un array dans un array.  
 Pour bien comprendre et visualiser l'arborescence dans nos tableaux, nous utilisons évidemment la fonction `print_r()`.  imbriquée entre les balises html `<pre>`.  
+
 Afin de faciliter ce processus, nous avont retranscrit une fonction astucieuce, étonnante de simplicité, trouvée dans une réponse stackoverflow. Le développeur crée systématiquement une fonction de débogage pour print_r ses tableaux.  
 
 ```PHP

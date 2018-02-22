@@ -18,7 +18,7 @@
         <h2>ToDo</h2>
         <?php display_todo(); ?>
         <br>
-        <input class="bouton" type="submit" name="enregistrer" value="enregistrer">
+        <input class="bouton" type="submit" name="enregistrer" value="Enregistrer">
         <div class="archive">
         <h2>Archive</h2>
         <?php display_done(); ?>

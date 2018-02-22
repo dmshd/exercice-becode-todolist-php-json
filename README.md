@@ -5,7 +5,7 @@
 
 ## Idées d'améliorations à réaliser  
 
-* Ajouter un bouton reset  - *done*
+* ~~Ajouter un bouton reset~~  - **fait**
 * Si la première lettre de la chaine de caractère inputée n'est pas en majuscule la mettre en majuscule  
 
 

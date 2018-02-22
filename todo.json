@@ -1,54 +1,34 @@
 [
     {
         "tache": "Sortir les poubelles",
-        "fait": true
-    },
-    {
-        "tache": "Sortir David",
-        "fait": true
+        "fait": false
     },
     {
         "tache": "Sortir le chien",
         "fait": false
     },
     {
-        "tache": "Sortir de chez moi",
+        "tache": "Sortir David",
         "fait": true
     },
     {
-        "tache": "Rentrer chez moi",
-        "fait": false
+        "tache": "Test",
+        "fait": true
     },
     {
-        "tache": "Acheter du fromage",
-        "fait": false
+        "tache": "WOOOOHOOOOO",
+        "fait": true
     },
     {
-        "tache": "Aller dire bonjour \u00e0 Mamy",
-        "fait": false
+        "tache": "\u00e7a marche !!!",
+        "fait": true
     },
     {
-        "tache": "Ne pas perdre le badge pour rentrer \u00e0 becode",
-        "fait": false
+        "tache": "Patates",
+        "fait": true
     },
     {
-        "tache": "Terminer la To do list avant jeudi",
-        "fait": false
-    },
-    {
-        "tache": "faire la vaisselle",
-        "fait": false
-    },
-    {
-        "tache": "Prendre le temps d&amp;#39;aller aux chiottes",
-        "fait": false
-    },
-    {
-        "tache": "bla",
-        "fait": false
-    },
-    {
-        "tache": "Cake aux pommes",
-        "fait": false
+        "tache": "Pr\u00e9parer la scarolle",
+        "fait": true
     }
 ]

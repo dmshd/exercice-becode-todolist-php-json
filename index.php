@@ -9,20 +9,21 @@
 </head>
 <body>
   <?php
-  include("formulaire.php");
 
+  include("formulaire.php");
    ?>
 <section class="page">
 <form action="index.php" method="post">
   <fieldset>
    <h2>ToDo</h2>
     <?php display_todo(); ?>
-    <?php include("contenu.php"); ?>
-    <input type="submit" name="Enregistrer" value="Enregistrer">
+
+    <input type="submit" name="enregistrer" value="enregistrer">
   </fieldset>
   <fieldset>
   <h2>ARCHIVE</h2>
     <?php display_done(); ?>
+    <?php include("contenu.php"); ?>
 
   </fieldset>
 </form>
@@ -31,7 +32,7 @@
      <h2>Ajouter une tâche</h2>
      <input type="text" name="addTask">
      <br><br>
-     <input type="submit" name="Ajouter" value="Ajouter"><br>
+     <input type="submit" name="ajouter" value="ajouter"><br>
      <span class="error"><?php
        echo $taskError;
       ?></span>

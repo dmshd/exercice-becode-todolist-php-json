@@ -2,9 +2,15 @@
 ini_set('display_errors', 1); // afficher les erreurs php dans le navigateur à remettre en commentaire ou supprimer quand tout c'est fini.
 
 //  Homemade Debugging tool
-function GoldenDebug($key) {
+function GoldenPrint($key) {
   echo "<pre>";
   print_r($key);
+  echo "</pre>";
+}
+
+function GoldenVarD($key) {
+  echo "<pre>";
+  var_dump($key);
   echo "</pre>";
 }
 
@@ -39,8 +45,10 @@ function display_done() {
     }
   }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-if ( $_SERVER["REQUEST_METHOD"] == "POST" ) { // $_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script -- REQUEST_METHOD Méthode de requête utilisée pour accéder à la page.
+
+if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["ajouter"]) ) { // $_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script -- REQUEST_METHOD Méthode de requête utilisée pour accéder à la page.
 
   if (empty($_POST["addTask"])) { // si le champs input ayant pour valeur addTask est vide alors...
   $taskError = "* Veuillez entrer une tâche."; // Assignation du message d'erreur à la varialbe $teskError.

@@ -31,7 +31,7 @@ function GoldenVarD($key) {
 }
 ```
 
-## Merci Mathieu  
+## Merci 
 
 Dans notre `contenu.php` vous trouverez cette boucle :
 

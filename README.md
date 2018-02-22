@@ -12,13 +12,14 @@
 ## notes php  
 
 `JSON_PRETTY_PRINT` Paramètre de la fonction `json_encode()` permettant d'écrire un JSON avec une indentation automatique le rendant beaucoup plus lisible.  
+
 `header("location: index.php");` Redirection en PHP. Nous avons du l'utiliser car notre `contenu.php` opérait bien le changement demandé dans le briefing mais il falllait réactualiser la page pour constater la modification en front-end, ajouter cette ligne à la fin de notre condition à résolu le problème.  
+
 `in_array()` — Indique si une valeur appartient à un tableau.  Fonction découverte dans la boucle utilisée par [Mathieu Leers](https://github.com/leersmathieu) , voir explication ci dessous.  
 
 Nous avons constaté qu'il devenait compliqué de manipuler les données quand on commençait à avoir un array dans un array.  
 Pour bien comprendre et visualiser l'arborescence dans nos tableaux, nous utilisons évidemment la fonction `print_r()`.  imbriquée entre les balises html `<pre>`.  
-
-Nous avons retranscrit une fonction astucieuce, étonnante de simplicité, trouvée dans une réponse stackoverflow. Le développeur crée systématiquement une fonction de débogage pour print_r ses tableaux.  
+Afin de faciliter ce processus, nous avont retranscrit une fonction astucieuce, étonnante de simplicité, trouvée dans une réponse stackoverflow. Le développeur crée systématiquement une fonction de débogage pour print_r ses tableaux.  
 
 ```PHP
 function GoldenPrint($key) {

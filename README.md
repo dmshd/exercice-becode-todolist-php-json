@@ -3,6 +3,8 @@
 # Réaliser une To do list avec PHP et JSON
 ## développé par [Geoffrey Canivet](https://github.com/geocani) et [Daniel Muyshond](https://github.com/dmshd)
 
+![Capture d'écran](https://github.com/dmshd/todolist/blob/master/todolist-capture.jpg)
+
 ### Idées d'améliorations à réaliser  
 
 * ~~Ajouter un bouton reset~~  - **fait**

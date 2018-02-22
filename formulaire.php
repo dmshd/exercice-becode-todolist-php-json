@@ -1,12 +1,30 @@
 <?php
 ini_set('display_errors', 1); // afficher les erreurs php dans le navigateur à remettre en commentaire ou supprimer quand tout c'est fini.
 
+<<<<<<< HEAD
 //  Homemade Debugging tool
 function GoldenPrint($key) {
   echo "<pre>";
   print_r($key);
   echo "</pre>";
 }
+=======
+
+function isExist($var){
+    if (isset($var)){
+    }
+  };
+
+function GoldenP($a) {
+  if (isset($a)) {
+  $a = filter_var($a, FILTER_SANITIZE_STRING);
+  $a = trim($a);
+  $a = stripslashes($a);
+  $a = htmlspecialchars($a);
+  return $a;
+  }
+};
+>>>>>>> c898c5ac360bcc7ff2dfd56bf6df85f615939ed0
 
 function GoldenVarD($key) {
   echo "<pre>";
@@ -17,6 +35,7 @@ function GoldenVarD($key) {
 //déclaration des variables
 $taskError = ""; //initialisation de la variable erreur en lui assignant une chaine de caractère vide (optionnel??).
 
+<<<<<<< HEAD
 //GoldenP - Homemade Sanitization drink - l'action de ses nutriments neutralise les mauvais input - Serve it warm !
 function GoldenP($a) {
   $a = filter_var($a, FILTER_SANITIZE_STRING); // filter_var — Filtre une variable avec un filtre spécifique -- FILTER_SANITIZE_STRING Supprime tous les tags HTML.
@@ -67,3 +86,43 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" AND isset($_POST["ajouter"]) ) { // $_
   }
 }
  ?>
+=======
+ ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todolist</title>
+</head>
+<body>
+    <h2>A FAIRE</h2>
+    <form class="formulaire" action="todo.json" method="post">
+    <fieldset>
+    <input type="checkbox" name="choix1" value="choix1"> Choix 1<br>
+    <input type="checkbox" name="choix2" value="choix2"> Choix 2<br>
+    <input type="checkbox" name="choix3" value="choix3"> Choix 3<br>
+    <input type="submit" name="submit" value="Enregistrer">
+    </fieldset>
+    <fieldset>
+      <h2>Ajouter une tâche</h2>
+      <label for="addTaskInput">La tâche à effectuer</label><br>
+      <input type="text" name="addTask" id="addTaskInput">
+      <?php if (empty($addTask)) {
+          echo "erreur";
+      }
+      ?>
+      <input type="submit" value="Ajouter">
+    </fieldset>
+  </form>
+
+<?php
+$todo = array();
+
+echo json_encode($arr);
+?>
+
+</body>
+</html>
+>>>>>>> c898c5ac360bcc7ff2dfd56bf6df85f615939ed0

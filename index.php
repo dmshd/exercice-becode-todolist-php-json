@@ -30,7 +30,7 @@
         <input type="text" name="addTask"><br>
         <span class="error"><?php echo $taskError; ?></span>
         <br><br>
-        <input class="bouton" type="submit" name="ajouter" value="Ajouter"><input class="bouton" type="submit" name="reinit" value="Reset"><br>
+        <input class="bouton" type="submit" name="ajouter" value="Ajouter"><input class="bouton" type="submit" name="reinit" value="Reset" hidden><br>
 
       </form>
     </section>

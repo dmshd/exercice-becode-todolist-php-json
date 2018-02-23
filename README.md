@@ -5,7 +5,8 @@
 
 ### Idées d'améliorations à réaliser  
 
-* ~~Ajouter un bouton reset~~  - **fait**
+* ~~Ajouter un bouton reset~~  - **fait** (en hidden sur le projet pour qu'on puisse voir ce que tout le monde à écrit sur heroku)
+* Ajouter une la possibilité de resset uniquement les archives
 * Si la première lettre de la chaine de caractère inputée n'est pas en majuscule la mettre en majuscule  
 
 
